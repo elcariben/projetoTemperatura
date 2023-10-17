@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+<body>
+    <div id="content">
+        <h1>Conversor de Temperatura</h1>
+        <input id="input" type="number" placeholder="Digite a temperatura" />
+        <select id="scale">
+            <option value="c">Celsius</option>
+            <option value="f">Fahrenheit</option>
+        </select>
+        <button onclick="convertTemperature()">Converter</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            var input = document.getElementById('input').value;
+            var scale = document.getElementById('scale').value;
+            var output = document.getElementById('output');
+            
+            if (scale == 'c') {
+                var fahrenheit = input * 9/5 + 32;
+                output.innerHTML = input + ' graus Celsius é igual a ' + fahrenheit + ' graus Fahrenheit.';
+            } else {
+                var celsius = (input - 32) * 5/9;
+                output.innerHTML = input + ' graus Fahrenheit é igual a ' + celsius + ' graus Celsius.';
+            }
+        }
+    </script>
+</body>
+</html>
